@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+        let expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      }
+
+      //   setCookie("name", "amit mali", 2);
+      //   setCookie("loggedin", "true", 2);
+      //   setCookie("id", "123", 2);
+
+      console.log(document.cookie);
+
+      function findCookie(key) {
+        key = key + "=";
+
+        return document.cookie
+          ? document.cookie
+              .split("; ")
+              .find((ele) => ele.startsWith(key))
+              .split("=")[1]
+          : "";
+      }
+
+      function removeCookie(cookiename) {
+        findCookie(cookiename) ? setCookie(cookiename, "", -1) : false;
+      }
+      removeCookie("name");
+      console.log(findCookie("name") ? "valid user" : "invalid user");
+
+      window.localStorage.setItem("name", "amit mali");
+    </script>
+  </body>
+</html>

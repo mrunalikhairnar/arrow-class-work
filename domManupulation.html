@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="mainHeading">weclome to <u> dom manupulation</u></h1>
+    <p>what is dom</p>
+    <h1 id="showmsg"></h1>
+    <input type="text" name="" id="username" onkeyup="getValue('username')" />
+
+    <ul>
+      <li data-uid="1" data-name="amit" onclick="getDataset(this)">Amit</li>
+      <li data-uid="2" onclick="getDataset(this)">Rahul</li>
+      <li data-uid="3" onclick="getDataset(this)">Manoj</li>
+    </ul>
+
+    <button onclick="showMsg()">show msg</button>
+
+    <button onclick="getValue('mainHeading')">show conetnt in console</button>
+
+    <script>
+      function showMsg() {
+        let elem = document.getElementById("showmsg");
+        elem.innerText = "hello, how are , khana khake jana ha...";
+      }
+
+      function getValue(id) {
+        const value = document.getElementById(id).value;
+        console.log(value);
+      }
+
+      function getDataset(elem) {
+        const uid = elem.dataset.uid;
+        console.log(uid);
+      }
+
+      // getValue();
+    </script>
+  </body>
+</html>

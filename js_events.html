@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Html Events</title>
+  </head>
+  <body>
+    <h2>Javascript Html Events</h2>
+    Enter your name: <input type="text" id="fname" onchange="upperCase()" />
+    <p>
+      When you leave the input Field, a function is triggered which transforms
+      the input text to upper case.
+    </p>
+
+    <div
+      onmouseover="mOver(this)"
+      onmouseout="mout(this)"
+      style="background-color: brown; height: 20px; width: 120px; padding: 40px"
+    >
+      Mouse Over Me
+    </div>
+  </body>
+  <script>
+    function upperCase() {
+      const x = document.getElementById("fname");
+      x.value = x.value.toUppercase();
+    }
+
+    function mOver(obj) {
+      obj.innerHTML = "Thank You";
+    }
+
+    function mOut(obj) {
+      obj.innerHTML = "Mouse Over Me";
+    }
+  </script>
+</html>

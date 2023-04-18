@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>weclome to dom manupulation</h1>
+    <h2 onclick="this.innerHTML='oops!'">click on this text</h2>
+    <h3 onclick="changeText(this)">click on this text!</h3>
+    <p>click the button to display the date.</p>
+    <p click "try it" to execute the displayDate() function.></p>
+    <p class="intro">Hello World!</p>
+    <h1 id="showmsg"></h1>
+    <button onclick="showMsg()">show msg</button>
+    <button onclick="displayDate()">The time is?</button>
+    <button id="mybtn">Try it</button>
+    <script>
+      function showMsg() {
+        let elem = document.getElementById("showmsg");
+        elem.innerText = "hello, how are , khana khake jana ha...";
+      }
+
+      function changeText(id) {
+        id.innerHTML = "ooops!";
+      }
+
+      function displayDate() {
+        document.getElementById("demo").innerHTML = Date();
+      }
+
+      document.getElementById("mybtn").onclick=displayDate;
+
+      function displayDate() {
+        document.getElementById("demo").innerHTML=Date();
+      }
+    </script>
+    <p id="demo"></p>
+  </body>
+</html>
